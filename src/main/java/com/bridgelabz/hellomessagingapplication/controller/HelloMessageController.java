@@ -1,6 +1,7 @@
 
 package com.bridgelabz.hellomessagingapplication.controller;
 
+import com.bridgelabz.hellomessagingapplication.dto.UserDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,4 +25,11 @@ public class HelloMessageController {
     public String helloMessage(@PathVariable("name") String name){
         return "Hello " + name + " from Bridgelabz.";
     }
+
+    //UC-4 POST Request Method to pass first name and last name in the Body
+    @PostMapping("/post")
+    public UserDTO bcd(@RequestBody UserDTO user) {
+        return user;
+    }
+
 }
