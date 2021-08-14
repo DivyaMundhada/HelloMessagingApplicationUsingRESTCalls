@@ -28,8 +28,13 @@ public class HelloMessageController {
 
     //UC-4 POST Request Method to pass first name and last name in the Body
     @PostMapping("/post")
-    public UserDTO bcd(@RequestBody UserDTO user) {
+    public UserDTO hello(@RequestBody UserDTO user) {
         return user;
     }
 
+   //UC-5 PUT Request Method and pass first name as Path Variable and last name as Query Parameter
+    @PutMapping("/put/{firstName}")
+    public String hello1(@PathVariable("firstName") String firstName ,@RequestParam(value ="lastName")  String lastName){
+        return "Hello "+ firstName+" "+lastName+" from Bridgelabz.";
+    }
 }
